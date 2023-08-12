@@ -12,13 +12,13 @@ isPangram text
    | otherwise = False
 
 
-check :: String -> Char -> String
-check alphabet c = if c `elem` alphabet then (filter (/=c) alphabet) else alphabet
-
 testPangram st = foldl check ['a'..'z'] $ toLowerCase $ removeWhite st
 
 removeWhite :: String -> String
 removeWhite st = filter (/= ' ') st
+
+check :: String -> Char -> String
+check alphabet c = if c `elem` alphabet then (filter (/=c) alphabet) else alphabet
 
 toLowerCase :: String -> String
 toLowerCase st = map toLower st
